@@ -1,0 +1,289 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище Toys_shopModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Buyers">
+    <Key>
+      <PropertyRef Name="Id_buyer" />
+    </Key>
+    <Property Name="Id_buyer" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname_buyer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name_buyer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patronymic_buyer" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone_number" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Cart">
+    <Key>
+      <PropertyRef Name="Id_toy" />
+      <PropertyRef Name="Id_purchase" />
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_toy" Type="int" Nullable="false" />
+    <Property Name="Id_purchase" Type="int" Nullable="false" />
+    <Property Name="Id_user" Type="int" Nullable="false" />
+    <Property Name="Amount_of_toys" Type="int" />
+    <Property Name="Cost" Type="int" />
+  </EntityType>
+  <EntityType Name="Employees">
+    <Key>
+      <PropertyRef Name="Id_employee" />
+    </Key>
+    <Property Name="Id_employee" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Surname_employee" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name_employee" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patronymic_employee" Type="nvarchar" MaxLength="50" />
+    <Property Name="Phone_number" Type="nvarchar" MaxLength="50" />
+    <Property Name="Id_position" Type="int" />
+  </EntityType>
+  <EntityType Name="Positions">
+    <Key>
+      <PropertyRef Name="Id_position" />
+    </Key>
+    <Property Name="Id_position" Type="int" Nullable="false" />
+    <Property Name="Name_position" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Purchases">
+    <Key>
+      <PropertyRef Name="Id_purchase" />
+    </Key>
+    <Property Name="Id_purchase" Type="int" Nullable="false" />
+    <Property Name="Id_buyer" Type="int" />
+    <Property Name="Date_purchase" Type="date" />
+    <Property Name="Cost" Type="int" />
+    <Property Name="Id_employee" Type="int" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Toys">
+    <Key>
+      <PropertyRef Name="Id_toy" />
+    </Key>
+    <Property Name="Id_toy" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_category" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cost" Type="int" Nullable="false" />
+    <Property Name="Image" Type="image" />
+    <Property Name="Discount" Type="int" />
+  </EntityType>
+  <EntityType Name="Toys_category">
+    <Key>
+      <PropertyRef Name="Id_category" />
+    </Key>
+    <Property Name="Id_category" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name_category" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Toys_on_warehouse">
+    <Key>
+      <PropertyRef Name="Id_warehouse" />
+      <PropertyRef Name="Id_toy" />
+    </Key>
+    <Property Name="Id_warehouse" Type="int" Nullable="false" />
+    <Property Name="Id_toy" Type="int" Nullable="false" />
+    <Property Name="Amount_of_toys_on_warehouse" Type="int" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id_user" />
+    </Key>
+    <Property Name="Id_user" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="Id_warehouse" />
+    </Key>
+    <Property Name="Id_warehouse" Type="int" Nullable="false" />
+    <Property Name="City" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="House" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Cart_Purchases">
+    <End Role="Purchases" Type="Self.Purchases" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Purchases">
+        <PropertyRef Name="Id_purchase" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Id_purchase" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_Toys1">
+    <End Role="Toys" Type="Self.Toys" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toys">
+        <PropertyRef Name="Id_toy" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Id_toy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cart_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Cart" Type="Self.Cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id_user" />
+      </Principal>
+      <Dependent Role="Cart">
+        <PropertyRef Name="Id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchases_Buyers">
+    <End Role="Buyers" Type="Self.Buyers" Multiplicity="0..1" />
+    <End Role="Purchases" Type="Self.Purchases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Buyers">
+        <PropertyRef Name="Id_buyer" />
+      </Principal>
+      <Dependent Role="Purchases">
+        <PropertyRef Name="Id_buyer" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Purchases_Employees">
+    <End Role="Employees" Type="Self.Employees" Multiplicity="0..1" />
+    <End Role="Purchases" Type="Self.Purchases" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="Id_employee" />
+      </Principal>
+      <Dependent Role="Purchases">
+        <PropertyRef Name="Id_employee" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Toys_on_warehouse_Toys1">
+    <End Role="Toys" Type="Self.Toys" Multiplicity="1" />
+    <End Role="Toys_on_warehouse" Type="Self.Toys_on_warehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toys">
+        <PropertyRef Name="Id_toy" />
+      </Principal>
+      <Dependent Role="Toys_on_warehouse">
+        <PropertyRef Name="Id_toy" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Toys_on_warehouse_Warehouse">
+    <End Role="Warehouse" Type="Self.Warehouse" Multiplicity="1" />
+    <End Role="Toys_on_warehouse" Type="Self.Toys_on_warehouse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Warehouse">
+        <PropertyRef Name="Id_warehouse" />
+      </Principal>
+      <Dependent Role="Toys_on_warehouse">
+        <PropertyRef Name="Id_warehouse" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Toys_Toys_category">
+    <End Role="Toys_category" Type="Self.Toys_category" Multiplicity="0..1" />
+    <End Role="Toys" Type="Self.Toys" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Toys_category">
+        <PropertyRef Name="Id_category" />
+      </Principal>
+      <Dependent Role="Toys">
+        <PropertyRef Name="Id_category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_User_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сотрудники_Должности">
+    <End Role="Positions" Type="Self.Positions" Multiplicity="0..1" />
+    <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Positions">
+        <PropertyRef Name="Id_position" />
+      </Principal>
+      <Dependent Role="Employees">
+        <PropertyRef Name="Id_position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Хранилище Toys_shopModelContainer">
+    <EntitySet Name="Buyers" EntityType="Self.Buyers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cart" EntityType="Self.Cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Positions" EntityType="Self.Positions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Purchases" EntityType="Self.Purchases" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Toys" EntityType="Self.Toys" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Toys_category" EntityType="Self.Toys_category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Toys_on_warehouse" EntityType="Self.Toys_on_warehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Cart_Purchases" Association="Self.FK_Cart_Purchases">
+      <End Role="Purchases" EntitySet="Purchases" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_Toys1" Association="Self.FK_Cart_Toys1">
+      <End Role="Toys" EntitySet="Toys" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cart_User" Association="Self.FK_Cart_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Cart" EntitySet="Cart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchases_Buyers" Association="Self.FK_Purchases_Buyers">
+      <End Role="Buyers" EntitySet="Buyers" />
+      <End Role="Purchases" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Purchases_Employees" Association="Self.FK_Purchases_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="Purchases" EntitySet="Purchases" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Toys_on_warehouse_Toys1" Association="Self.FK_Toys_on_warehouse_Toys1">
+      <End Role="Toys" EntitySet="Toys" />
+      <End Role="Toys_on_warehouse" EntitySet="Toys_on_warehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Toys_on_warehouse_Warehouse" Association="Self.FK_Toys_on_warehouse_Warehouse">
+      <End Role="Warehouse" EntitySet="Warehouse" />
+      <End Role="Toys_on_warehouse" EntitySet="Toys_on_warehouse" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Toys_Toys_category" Association="Self.FK_Toys_Toys_category">
+      <End Role="Toys_category" EntitySet="Toys_category" />
+      <End Role="Toys" EntitySet="Toys" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Role" Association="Self.FK_User_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сотрудники_Должности" Association="Self.FK_Сотрудники_Должности">
+      <End Role="Positions" EntitySet="Positions" />
+      <End Role="Employees" EntitySet="Employees" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

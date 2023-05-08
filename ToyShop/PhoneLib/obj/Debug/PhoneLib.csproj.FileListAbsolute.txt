@@ -1,0 +1,6 @@
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\PhoneLib\bin\Debug\PhoneLib.dll
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\PhoneLib\bin\Debug\PhoneLib.pdb
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\PhoneLib\obj\Debug\PhoneLib.csproj.AssemblyReference.cache
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\PhoneLib\obj\Debug\PhoneLib.csproj.CoreCompileInputs.cache
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\PhoneLib\obj\Debug\PhoneLib.dll
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\PhoneLib\obj\Debug\PhoneLib.pdb

@@ -1,0 +1,68 @@
+﻿<Application x:Class="ToyShop.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ToyShop"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <Style TargetType="Grid" x:Key="ColorSecondary">
+            <Setter Property="Background"  Value="#EFC571"/>
+        </Style>
+        <Style TargetType="Border" x:Key="ColorAccent">
+            <Setter Property="BorderBrush" Value="#3CD16E"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#3CD16E"/>
+            <Setter Property="Width" Value="160"/>
+            <Setter Property="Height" Value="25"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Foreground" Value="#FFFFFF"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="Border" x:Key="ButtonStyle">
+            <Setter Property="CornerRadius" Value="15"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="BlockHeader">
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Foreground" Value="#06B92A"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Margin" Value="0 20 0 0"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="Blockcommon">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="NameText">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="17"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="GhostText">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="TextAlignment" Value="Left"/>
+            <Setter Property="Foreground" Value="#C0C0C0"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="EmployeeText">
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="PurchaseText">
+            <Setter Property="FontSize" Value="17"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="CartToyCost">
+            <Setter Property="FontSize" Value="23"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="CartToyText">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="EmptyCartText">
+            <Setter Property="FontSize" Value="40"/>
+        </Style>
+        <Style TargetType="TextBlock" x:Key="LoginText">
+            <Setter Property="FontSize" Value="15"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+        </Style>
+    </Application.Resources>
+</Application>

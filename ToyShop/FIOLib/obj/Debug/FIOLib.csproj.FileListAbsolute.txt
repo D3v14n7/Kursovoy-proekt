@@ -1,0 +1,6 @@
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\FIOLib\bin\Debug\FIOLib.dll
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\FIOLib\bin\Debug\FIOLib.pdb
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\FIOLib\obj\Debug\FIOLib.csproj.AssemblyReference.cache
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\FIOLib\obj\Debug\FIOLib.csproj.CoreCompileInputs.cache
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\FIOLib\obj\Debug\FIOLib.dll
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\FIOLib\obj\Debug\FIOLib.pdb

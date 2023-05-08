@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0515E9CE-9A6D-420A-A047-B0B53752EFF3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ToyShop</RootNamespace>
+    <AssemblyName>ToyShop</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Entities\Buyer.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Cart.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\CartPartial.cs" />
+    <Compile Include="Entities\Employee.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\EmployeesPartial.cs" />
+    <Compile Include="Entities\Position.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Purchase.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\PurchasePartial.cs" />
+    <Compile Include="Entities\Role.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\sysdiagram.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Toy.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ToyShopModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyShopModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ToyShopModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ToyShopModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\ToysPartial.cs" />
+    <Compile Include="Entities\Toys_category.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Toys_on_warehouse.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\User.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Entities\Warehouse.cs">
+      <DependentUpon>ToyShopModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Pages\AddEditEmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AddPurchasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\CartPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\LoginPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\NavigationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PurchasePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistrationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ToysPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Pages\AddEditEmployeesPage.xaml.cs">
+      <DependentUpon>AddEditEmployeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddEditPage.xaml.cs">
+      <DependentUpon>AddEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AddPurchasePage.xaml.cs">
+      <DependentUpon>AddPurchasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\CartPage.xaml.cs">
+      <DependentUpon>CartPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\LoginPage.xaml.cs">
+      <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\NavigationPage.xaml.cs">
+      <DependentUpon>NavigationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PurchasePage.xaml.cs">
+      <DependentUpon>PurchasePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ToysPage.xaml.cs">
+      <DependentUpon>ToysPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EntityDeploy Include="Entities\ToyShopModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ToyShopModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Entities\ToyShopModel.edmx.diagram">
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\toy_logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Assets\toy_icon.png" />
+    <Resource Include="Assets\toy_background.png" />
+    <Resource Include="Assets\toylist_background.jpg" />
+    <Resource Include="Assets\cart.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\FIOLib\FIOLib.csproj">
+      <Project>{0b705bb8-a447-470d-b0b0-1e231b8b9790}</Project>
+      <Name>FIOLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoginLib\LoginLib.csproj">
+      <Project>{7c29b882-f068-408d-bde1-9b09dba97ba1}</Project>
+      <Name>LoginLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PasswordLib\PasswordLib.csproj">
+      <Project>{85000de4-d8e0-4475-ad48-5bf35ddc813c}</Project>
+      <Name>PasswordLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PhoneLib\PhoneLib.csproj">
+      <Project>{b70add38-fcff-48c2-8c97-8930e43833c1}</Project>
+      <Name>PhoneLib</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Entities\ToyShopModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+      <LastGenOutput>ToyShopModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Entities\ToyShopModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ToyShopModel.edmx</DependentUpon>
+      <LastGenOutput>ToyShopModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,6 @@
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\LoginLib\bin\Debug\LoginLib.dll
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\LoginLib\bin\Debug\LoginLib.pdb
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\LoginLib\obj\Debug\LoginLib.csproj.AssemblyReference.cache
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\LoginLib\obj\Debug\LoginLib.csproj.CoreCompileInputs.cache
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\LoginLib\obj\Debug\LoginLib.dll
+C:\Users\79517\OneDrive\Рабочий стол\Работы\toy_shop\ToyShop\LoginLib\obj\Debug\LoginLib.pdb
